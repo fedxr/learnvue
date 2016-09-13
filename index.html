@@ -7,7 +7,21 @@
 </head>
 <body>
 	<div id="app">
-		{{message}}
+		<p>{{message}}</p>
+		<input type="text" v-model="message">
+		<button v-on:click="reverseMessage">Reverse Message</button>
+		<ul>
+			<li v-for="todo in todos">
+				{{todo.text}}
+			</li>
+		</ul>
+		<input type="text" v-model="newTodo" v-on:keyup.enter="addTodo">
+		<ul>
+			<li v-for="do in dos">
+				<span>{{do.text}}</span>
+				<button v-on:click="removeTodo($index)">X</button>
+			</li>
+		</ul>
 	</div>
 </body>
 <script src="index.js"></script>
