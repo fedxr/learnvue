@@ -15,7 +15,7 @@
 				{{todo.text}}
 			</li>
 		</ul>
-		<input type="text" v-model="newTodo" v-on:keyup.enter="addTodo">
+		<input type="text" v-model="newTodo" @keyup.enter="addTodo">
 		<ul>
 			<li v-for="do in dos">
 				<span>{{do.text}}</span>
