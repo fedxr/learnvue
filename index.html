@@ -6,22 +6,10 @@
 	<script src="vue.js"></script>
 </head>
 <body>
-	<div id="app">
-		<p>{{message}}</p>
-		<input type="text" v-model="message">
-		<button v-on:click="reverseMessage">Reverse Message</button>
-		<ul>
-			<li v-for="todo in todos">
-				{{todo.text}}
-			</li>
-		</ul>
-		<input type="text" v-model="newTodo" @keyup.enter="addTodo">
-		<ul>
-			<li v-for="do in dos">
-				<span>{{do.text}}</span>
-				<button v-on:click="removeTodo($index)">X</button>
-			</li>
-		</ul>
+	<div id="app-2">
+		<span v-bind:title="message">
+			Hover your mouse over me for a few seconds to see my dynamically bound title!
+		</span>
 	</div>
 </body>
 <script src="index.js"></script>
