@@ -3,10 +3,12 @@ var app2 = new Vue({
 	data: {
 		message: 'You loaded this page on' + new Date(),
 		seen: true,
-		todos: [
-			{ text: 'Learn JavaScript' },
-      		{ text: 'Learn Vue' },
-      		{ text: 'Build something awesome' }
-		]
+		todos: [{
+			text: 'Learn JavaScript'
+		}, {
+			text: 'Learn Vue'
+		}, {
+			text: 'Build something awesome'
+		}]
 	}
 });
