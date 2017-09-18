@@ -1,34 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>vue demo</title>
-	<script src="vue.js"></script>
+    <meta charset="UTF-8">
+    <title>vue demo</title>
+    <script src="vue.js"></script>
 </head>
+
 <body>
-	<div id="app-2">
-		<span v-bind:title="message">
+    <div id="app-2">
+        <span v-bind:title="message">
 			Hover your mouse over me for a few seconds to see my dynamically bound title!
 		</span>
-		<p v-if="seen">Now you see me</p>
-		<ol>
-			<li v-for="todo in todos">
-				{{todo.text}}
-			</li>
-		</ol>
-	</div>
+        <p v-if="seen">Now you see me</p>
+        <ol>
+            <li v-for="todo in todos">
+                {{todo.text}}
+            </li>
+        </ol>
+    </div>
 
-	<!-- 便签 start -->
-	array.concat(item...); ---no change --return new array
-	array.join(separator); ---no change
-	array.pop(); ---change --return el
-	array.push(item...); ---change --return array.length
-	array.reverse(); ---change --return array
-	array.shift(); ---change --return el
-	array.slice(start, end); ---no change --return new array
-	array.sort(comparefn); ---change --return array
-	array.splice(start, deleteCount, item...); ---change --return array
-	<!-- 便签 end -->
 </body>
 <script src="index.js"></script>
+
 </html>
