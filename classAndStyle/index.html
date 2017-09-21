@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vue demo</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="exmaple">
+        <!-- class -->
+        <p class="static" v-bind:class="{active:isActive, 'text-danger': hasError}"></p>
+        <p v-bind:class="classObject"></p>
+        <!-- 组件添加class -->
+        <my-component class="baz boo" v-bind:class="{active:isActive}"></my-component>
+        <!-- 绑定样式 -->
+        <p v-bind:style="{color:activeColor, fontSize: fontSize + 'px'}">24</p>
+        <p v-bind:style="styleObject">30</p>
+    </div>
+
+</body>
+<script src="index.js"></script>
+
+</html>
