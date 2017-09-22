@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vue demo</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <ul id="exmaple-1">
+        <li v-for="item in items">
+            {{item.message}}
+        </li>
+    </ul>
+    <ul id="example-2">
+        <li v-for="(item, index) in items">
+            {{parentMessage}} - {{index}} - {{item.message}}
+        </li>
+    </ul>
+    <ul id="v-for-project" class="demo">
+        <li v-for="value in object">
+            {{value}}
+        </li>
+        <div v-for="(value,key,index) in object">
+            {{index}}.{{key}}:{{value}}
+        </div>
+    </ul>
+</body>
+<script src="index.js"></script>
+
+</html>
