@@ -8,7 +8,20 @@
 </head>
 
 <body>
+    <div id="example-1">
+        <button v-on:click="counter+=1">增加1</button>
+        <p>这个按钮被点击了{{counter}}次</p>
+    </div>
 
+    <div id="example-2">
+        <button v-on:click="greet">Greet</button>
+    </div>
+
+    <!-- 内联处理器里的方法 -->
+    <div id="example-3">
+        <button v-on:click="say('hi')">Say hi</button>
+        <button v-on:click="say('what')">Say what</button>
+    </div>
 </body>
 <script src="index.js"></script>
 
