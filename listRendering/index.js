@@ -46,10 +46,52 @@ var exmaple3 = new Vue({
         numbers: [ 1, 2, 3, 4, 5 ]
       },
       methods: {
-        even: function (numbers) {
+        evenNumbers: function (numbers) {
           return numbers.filter(function (number) {
             return number % 2 === 0
           })
         }
       }
+});
+
+//一个组件的 v-for
+Vue.component('todo-item',{
+    template: '\
+        <li>\
+            {{title}}\
+            <button v-on:click="$emit(\'remove\')">X</button>\
+        </li>\
+    ',
+    props:['title']
+});
+
+new Vue({
+    el: '#todo-list-example',
+    data: {
+        newTodoText: '',
+        todos: [
+            {
+                id: 1,
+                title: 'Do the dishes',
+              },
+              {
+                id: 2,
+                title: 'Take out the trash',
+              },
+              {
+                id: 3,
+                title: 'Mow the lawn'
+              }
+        ],
+        nextTodoId: 4
+    },
+    methods: {
+        addNewTodo: function(){
+            this.todos.push({
+                id: this.nextTodoId++,
+                title: this.newTodoText
+            });
+            this.newTodoText = '';
+        }
+    }
 });

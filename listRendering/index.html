@@ -32,6 +32,13 @@
         <li v-for="n in evenNumbers">{{n}}</li>
         <li v-for="n in evenNumbers">{{n}}</li>
     </ul>
+    <!-- 一个组件的 v-for -->
+    <div id="todo-list-example">
+        <input type="text" v-model="newTodoText" v-on:keyup.enter="addNewTodo" placeholder="Add a todo">
+        <ul>
+            <li is="todo-item" v-for="(todo,index) in todos" v-bind:key="todo.id" v-bind:title="todo.title" v-on:remove="todos.splice(index,1)"></li>
+        </ul>
+    </div>
 </body>
 <script src="index.js"></script>
 
