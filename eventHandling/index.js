@@ -7,6 +7,7 @@ var example1 = new Vue({
 
 var example2 = new Vue({
     el:'#example-2',
+    
     data: {
         name: 'Vue.js'
     },
