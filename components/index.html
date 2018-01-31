@@ -12,6 +12,21 @@
         <my-component></my-component>
         <child-component></child-component>
     </div>
+
+    <div id="example-2">
+        <simple-counter></simple-counter>
+        <simple-counter></simple-counter>
+        <simple-counter></simple-counter>
+    </div>
+
+    <div id="example-3">
+        <child my-message="hello"></child>
+        <br>
+        <!-- 绑定动态prop -->
+        <input type="text" v-model="parentMsg">
+        <br>
+        <child v-bind:my-message="parentMsg"></child>
+    </div>
 </body>
 <script src="index.js"></script>
 
