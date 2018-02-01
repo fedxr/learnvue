@@ -27,6 +27,15 @@
         <br>
         <child v-bind:my-message="parentMsg"></child>
     </div>
+
+    <!-- 使用v-on绑定自定义事件 -->
+    <div id="counter-event-example">
+        <p>{{total}}</p>
+        <button-counter v-on:increment="incrementTotal"></button-counter>
+        <button-counter v-on:increment="incrementTotal"></button-counter>
+        <!-- 模板绑定原生事件 -->
+        <button-counter v-on:click.native="incrementTotal"></button-counter>
+    </div>
 </body>
 <script src="index.js"></script>
 
