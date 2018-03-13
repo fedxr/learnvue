@@ -79,7 +79,7 @@ new Vue({
 
 
 // 使用自定义事件的表单输入组件
-Vue.component('currency-input', {
+/* Vue.component('currency-input', {
     template: '\
       <div>\
         <label v-if="label">{{ label }}</label>\
@@ -145,4 +145,22 @@ new Vue({
             ) / 100).toFixed(2)
         }
     }
-})
+}) */
+
+// 自定义组件的 v-model
+Vue.component('my-checkbox', {
+    template: '<input type="checkbox" checked>',
+    model: {
+        prop: 'checked',
+        event: 'change'
+    },
+    props: {
+        checked: Boolean,
+        // 这样就允许拿 `value` 这个 prop 做其它事了
+        value: String
+    }
+});
+
+new Vue({
+    el: '#checkbox'
+});
