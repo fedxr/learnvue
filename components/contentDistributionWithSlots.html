@@ -26,6 +26,31 @@
 
         <p slot="footer">这里有一些联系信息</p>
     </app-layout>
+
+    <!-- 作用域插槽 -->
+    <div id="app">
+        <my-awesome-list :items="items">
+            <!-- 作用域插槽也可以是具名的 -->
+            <li slot="item" slot-scope="props" class="my-fancy-item">
+                {{ props.text }}
+            </li>
+        </my-awesome-list>
+    </div>
+
+    <!-- 动态组件 -->
+    <!-- keep-alive 把切换出去的组件保留在内存中，可以保留它的状态或避免重新渲染 -->
+    <div id="keepAlive">
+        <keep-alive>
+            <component v-bind:is="currentView">
+                <!-- 组件在 vm.currentview 变化时改变！ -->
+            </component>
+        </keep-alive>
+    </div>
+
+    <!-- 异步组件 -->
+    <div id="async">
+        <async-example></async-example>
+    </div>
     <script src="contentDistributionWithSlots.js"></script>
 </body>
 
