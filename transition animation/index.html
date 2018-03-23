@@ -4,11 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <title>vue demo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+
     <script src="../vue.js"></script>
 </head>
 
 <body>
+    <div id="demo">
+        <button v-on:click="show = !show">
+            Toggle
+        </button>
+        <transition name="fade">
+            <p v-if="show">Hello</p>
+        </transition>
+    </div>
 
+    <!-- css过渡 -->
+    <div id="example-1">
+        <button @click="show = !show">
+            Toggle render
+        </button>
+        <transition name="slide-fade">
+            <p v-if="show">
+                hello again
+            </p>
+        </transition>
+    </div>
+
+    <!-- css 动画 -->
+    <div id="example-2">
+        <button @click="show = !show">
+            Toggle show
+        </button>
+        <transition name="bounce">
+            <p v-if="show">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis enim libero, at lacinia diam fermentum id. Pellentesque habitant morbi tristique senectus et netus.
+            </p>
+        </transition>
+    </div>
+
+    <!-- 自定义过渡的类名
+ -->
+    <div id="example-3">
+        <button @click="show = !show">
+              Toggle render
+            </button>
+        <transition name="custom-classes-transition" enter-active-class="animated tada" leave-active-class="animated bounceOutRight">
+            <p v-if="show">hello</p>
+        </transition>
+    </div>
     <script src="index.js"></script>
 </body>
 
