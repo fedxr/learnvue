@@ -59,3 +59,25 @@
         transform: scale(1);
     }
 }
+
+
+/* 列表过渡 */
+
+.list-complete-item {
+    transition: all 1s;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.list-complete-leave-active {
+    position: absolute;
+}
+
+.list-complete-enter,
+.list-complete-leave-to
+/* .list-leave-active for below version 2.1.8 */
+
+{
+    opacity: 0;
+    transform: translateY(30px);
+}

@@ -8,6 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
 
     <script src="../vue.js"></script>
+    <!--Velocity works very much like jQuery.animate and is a great option for JavaScript animations-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
 </head>
 
 <body>
@@ -53,6 +56,32 @@
         <transition name="custom-classes-transition" enter-active-class="animated tada" leave-active-class="animated bounceOutRight">
             <p v-if="show">hello</p>
         </transition>
+    </div>
+
+    <!-- js钩子 -->
+    <div id="example-4">
+        <button @click="show = !show">
+              Toggle
+            </button>
+        <transition v-on:before-enter="beforeEnter" v-on:enter="enter" v-on:leave="leave" v-bind:css="false">
+            <p v-if="show">
+                Demo
+            </p>
+        </transition>
+    </div>
+
+    <!-- 列表过渡 -->
+    <div id="list-complete-demo" class="demo">
+        <button v-on:click="shuffle">Shuffle</button>
+        <button v-on:click="add">Add</button>
+        <button v-on:click="remove">Remove</button>
+        <!-- transition-group 不同于 <transition>，它会以一个真实元素呈现：默认为一个 <span>。你也可以通过 tag 特性更换为其他元素 -->
+        <!-- 这里通过 tag 特性转换为 <p> 标签 -->
+        <transition-group name="list-complete" tag="p">
+            <span v-for="item in items" v-bind:key="item" class="list-complete-item">
+                {{item}}
+            </span>
+        </transition-group>
     </div>
     <script src="index.js"></script>
 </body>
